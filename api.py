@@ -20,12 +20,12 @@ def root():
 @app.get("/keywords")
 def keywords(city):
     if city == "London":
-        data= pd.read_csv("gs://airbnbadvice/data/description_london.csv")
+        # data= pd.read_csv("gs://airbnbadvice/data/description_london.csv")
         # answer_keywords = data["keywords"].to_string()
         json_london = { 'city' : 'London',
                         'keywords': 'answer_keywords'}
         return json_london
     else : 
-        return {'city':['no city'],
-                'keywords':[""]}
+        return {'city':'no city',
+                'keywords':""}
     
