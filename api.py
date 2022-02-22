@@ -18,7 +18,7 @@ def root():
     return "Hello from Cloud Run CD"
 
 @app.get("/keywords")
-def city_keywords(city):
+def keywords(city):
     if city == "London":
         data= pd.read_csv("gs://airbnbadvice/data/description_london.csv")
         answer_keyword = data["keywords"].tolist()
