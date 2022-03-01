@@ -64,7 +64,8 @@ def fare_prediction(latitude ="latitude",longitude="longitude",accomodates ="acc
     loaded_model = joblib.load(tf.io.gfile.GFile(gcs_path, 'rb'))
     predicted_fare_log = loaded_model.predict(X_to_predict.T)
     predicted_fare = np.exp(predicted_fare_log)
-    return predicted_fare[0]
+    json_predicted_fare={'predicted_fare' : predicted_fare[0]}
+    return json_predicted_fare
 
 
 
