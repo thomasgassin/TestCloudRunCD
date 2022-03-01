@@ -18,8 +18,7 @@ app.add_middleware(
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers
 )
-gcs_path = 'gs://airbnbadvice/model/model_rf_price_log.pkl'
-loaded_model = joblib.load(tf.io.gfile.GFile(gcs_path, 'rb'))
+
 
 @app.get("/")
 def root():
@@ -53,6 +52,8 @@ def fare_prediction(latitude ="latitude",longitude="longitude",accomodates ="acc
                     'minimum_nights': int(minimum_nights),
                     'Entire_home_apt':int(Entire_home_apt)
                     }
+    gcs_path = 'gs://airbnbadvice/model/model_rf_price_log.pkl'
+    loaded_model = joblib.load(tf.io.gfile.GFile(gcs_path, 'rb'))
     X_to_predict = pd.DataFrame.from_dict(dictionnary,orient="index")
     predicted_fare_log = loaded_model.predict(X_to_predict.T)
     predicted_fare = np.exp(predicted_fare_log)
