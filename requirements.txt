@@ -4,5 +4,3 @@ pandas
 numpy
 joblib
 tensorflow
-pickle
-io
