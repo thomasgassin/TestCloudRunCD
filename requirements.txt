@@ -4,5 +4,4 @@ pandas
 numpy
 joblib
 tensorflow
-io
 sklearn
