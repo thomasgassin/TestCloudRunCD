@@ -19,10 +19,9 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-
 @app.get("/")
 def root():
-    return "Hello from Cloud Run CD"
+    return "Hello from the team "
 
 @app.get("/keywords")
 def keywords(city):
@@ -59,13 +58,3 @@ def fare_prediction(latitude ="latitude",longitude="longitude",accomodates ="acc
     predicted_fare = np.exp(predicted_fare_log)
     json_predicted_fare={'predicted_fare' : predicted_fare[0]}
     return json_predicted_fare
-
-
-# {  "latitude" : 51.50344025 ,
-#     "longitude" : -0.12770820958562096 ,
-#     "accomodates":2,
-#     "bedrooms" : 2 , 
-#     "beds" : 1,
-#     "minimum_nights" : 1 , 
-#     "Entire_home_apt" : 1
-# }
