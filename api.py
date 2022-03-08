@@ -67,6 +67,6 @@ def fare_prediction(latitude ="latitude",longitude="longitude",accomodates ="acc
 
 @app.get("/announcement")
 def announcement(keywords1="keywords1"):
-    result = generate_text_seq(str(keywords))
+    result = generate_text_seq(str(keywords1))
     json_announce_created={"announce":result}
     return json_announce_created

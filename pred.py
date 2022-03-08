@@ -39,6 +39,6 @@ def generate_text_seq(input_text):
 
 
 if __name__ == '__main__':
-    result = generate_text_seq("balcony")
-    # title = room_types[0] + ' - ' + result
+    result = generate_text_seq("flat")
+    title = room_types[0] + ' - ' + result
     print(result)
