@@ -64,7 +64,7 @@ def fare_prediction(latitude ="latitude",longitude="longitude",accomodates ="acc
 #     # gcs_path = 'gs://airbnbadvice/model/model_rf_price_log.pkl'
 #     # loaded_model = joblib.load(tf.io.gfile.GFile(gcs_path, 'rb'))
 #     return data_frame
-
+#another comment
 @app.get("/announcement")
 def announcement(keywords1="keywords1"):
     result = generate_text_seq(str(keywords1))
